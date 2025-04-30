@@ -18,4 +18,5 @@ export default defineNuxtConfig({
       odesliAddress: 'https://api.song.link/v1-alpha.1'
     }
   }
+
 })
