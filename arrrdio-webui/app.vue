@@ -4,13 +4,11 @@ const items = ref(['Spotify', 'AppleMusic', 'YTMusic', 'Soundcloud'])
 var platform = ref('Spotify')
 var songLink = ref('')
 
-// import Odesli from 'odesli.js'
-// const client = new Odesli()
+import { getOdesliLink } from "@/util/odesli.vue"
 
 async function call() {
-  const response = await fetch(`https://api.song.link/v1-alpha.1/links?url=${encodeURIComponent(songLink.value)}`);
-  const data = await response.json();
-  alert(JSON.stringify(data));
+  const data = await getOdesliLink(songLink.value);
+  console.log(JSON.stringify(data));
 
   const req_ntfy = new Request("https://ntfy.sh/arrrdiotests", {
     method: "POST",

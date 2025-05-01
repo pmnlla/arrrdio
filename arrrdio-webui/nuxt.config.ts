@@ -11,5 +11,11 @@ export default defineNuxtConfig({
     '@nuxt/ui'
   ],
 
-  css: ['~/app/assets/css/main.css']
+  css: ['~/app/assets/css/main.css'],
+
+  runtimeConfig: {
+    public: {
+      odesliAddress: 'https://api.song.link/v1-alpha.1'
+    }
+  }
 })
