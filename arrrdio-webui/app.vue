@@ -1,26 +1,23 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 var songLink = ref('')
+var ApiCall = ref('')
+import { getAllAssociatedInfo, getOdesliLink, getSongName, getStreamLink, writeSongEntity } from "@/util/odesli.vue"
 
-import { getAllAssociatedInfo, getOdesliLink, getSongName, getStreamLink } from "@/util/odesli.vue"
+/// <reference types="../node_modules/.vue-global-types/vue_3.5_0_0_0.d.ts" />
+import type { TrackInfo, CastEntity } from "@/util/castEntity.vue";
+// im gonna be so fr i have no clue what that first line does, vscode just suggested it. sigma balls
 
 const toast = useToast()
 
 async function call() {
 
-  const data = await getAllAssociatedInfo(songLink.value);
-  /*
-  const req_ntfy = new Request("https://ntfy.sh/arrrdiotests", {
-    method: "POST",
-    body: data,
-    headers: {
-        'Content-Type': 'text/plain',
-      },
-  });
-  await $fetch(req_ntfy);*/
-
-  showSongToast(data[0] as string, data[1] as string);
-
+  const castEntity = await writeSongEntity(songLink.value);
+  if (castEntity && castEntity._trackInfo) {
+    showSongToast(castEntity._trackInfo.title, castEntity._trackInfo.artist);
+  } else {
+    console.log(castEntity?._trackInfo.title);
+  }
 }
 
 function showSongToast(name: string, author: string) {
