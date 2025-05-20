@@ -1,7 +1,5 @@
-<script lang="ts" >
-
 /// <reference types="../node_modules/.vue-global-types/vue_3.5_0_0_0.d.ts" />
-import type { TrackInfo, CastEntity } from "@/util/castEntity.vue";
+import type { TrackInfo, CastEntity } from "~/util/castEntity";
 // im gonna be so fr i have no clue what that first line does, vscode just suggested it. sigma balls
 
 interface SongEntity_NoLink {
@@ -131,4 +129,3 @@ export async function getStreamLink(address: string) {
     return null; // or throw err;
   }
 } 
-</script>

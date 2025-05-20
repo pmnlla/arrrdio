@@ -1,5 +1,3 @@
-<script lang="ts">
-
 export interface TrackInfo {
     title: string,
     album: string,
@@ -13,4 +11,3 @@ export interface CastEntity {
   _trackInfo: TrackInfo
 }
 
-</script>

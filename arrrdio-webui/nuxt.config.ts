@@ -8,7 +8,8 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxt/icon',
     '@nuxt/image',
-    '@nuxt/ui'
+    '@nuxt/ui',
+    '@sentry/nuxt/module'
   ],
 
   css: ['~/app/assets/css/main.css'],
@@ -17,6 +18,16 @@ export default defineNuxtConfig({
     public: {
       odesliAddress: 'https://api.song.link/v1-alpha.1'
     }
-  }
+  },
 
+  sentry: {
+    sourceMapsUploadOptions: {
+      org: 'lilylab',
+      project: 'javascript-nuxt'
+    }
+  },
+
+  sourcemap: {
+    client: 'hidden'
+  }
 })
