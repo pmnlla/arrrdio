@@ -2,7 +2,15 @@ from django.http import HttpResponse
 from django import forms
 from django.views.decorators.csrf import csrf_exempt
 
+from pymongo.server_api import ServerApi
+from pymongo.mongo_client import MongoClient
+
+import json
+import ofunctions.json_sanitize as of_sanitation
+
 import environ
+
+import pprint
 
 @csrf_exempt
 def index(request):
@@ -28,7 +36,23 @@ def add(request):
     if request.method != "POST":
         return HttpResponse(status=400)
     else:
+        data = json.loads(request.body)
+        pprint.pprint(data)
+        print(json.dumps(data))
+        sanitized = of_sanitation.json_sanitize(data)
+
+        if sanitized != data:
+            return HttpResponse(status=418) # tried some weird shit with curl? fuck you!
+        
         env = environ.Env()
         environ.Env.read_env()
         login_string = "mongodb+srv://{usr}:{pwd}@{addr}/?retryWrites=true&w=majority&appName=Cluster0".format(usr=env('mongousr'), pwd=env('mongopwd'), addr=env('mongoadr'))
         print(login_string)
+        client = MongoClient(login_string, server_api=ServerApi('1'))
+
+        db = client['arrrdio']
+        collection = db['arrrdio']
+
+        temp_posts = collection.insert_one(data).inserted_id # we do not care for this !!!!!!
+        
+        return HttpResponse(status=200)
