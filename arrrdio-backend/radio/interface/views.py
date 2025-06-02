@@ -12,6 +12,8 @@ import environ
 
 import pprint
 
+from .tasks import start, addsong
+
 @csrf_exempt
 def index(request):
     if request.method != "POST":
@@ -32,6 +34,11 @@ def index(request):
         return HttpResponse("good", status=200)
 
 @csrf_exempt
+def resume(request):
+    start.send()
+    return HttpResponse(status=200)
+
+@csrf_exempt
 def add(request):
     if request.method != "POST":
         return HttpResponse(status=400)
@@ -44,15 +51,8 @@ def add(request):
         if sanitized != data:
             return HttpResponse(status=418) # tried some weird shit with curl? fuck you!
         
-        env = environ.Env()
-        environ.Env.read_env()
-        login_string = "mongodb+srv://{usr}:{pwd}@{addr}/?retryWrites=true&w=majority&appName=Cluster0".format(usr=env('mongousr'), pwd=env('mongopwd'), addr=env('mongoadr'))
-        print(login_string)
-        client = MongoClient(login_string, server_api=ServerApi('1'))
-
-        db = client['arrrdio']
-        collection = db['arrrdio']
-
-        temp_posts = collection.insert_one(data).inserted_id # we do not care for this !!!!!!
+        addsong.send(data)
         
         return HttpResponse(status=200)
+
+        # by now, we should have the required data put into mongodb - which is all that we need!
