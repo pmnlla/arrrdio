@@ -12,7 +12,7 @@ import environ
 
 import pprint
 
-from .tasks import start, addsong
+from .tasks import start, addsong, sync_dummy_data
 
 @csrf_exempt
 def index(request):
@@ -56,3 +56,8 @@ def add(request):
         return HttpResponse(status=200)
 
         # by now, we should have the required data put into mongodb - which is all that we need!
+
+@csrf_exempt
+def sync(request):
+    sync_dummy_data.send()
+    return HttpResponse(status=200)
