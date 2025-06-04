@@ -20,6 +20,7 @@ async function call() {
   const castEntity = await writeSongEntity(songLink.value);
   if (castEntity && castEntity._trackInfo) {
     showSongToast(castEntity._trackInfo.title, castEntity._trackInfo.artist);
+    console.log(JSON.stringify(castEntity));
   } else {
     console.log(castEntity?._trackInfo.title);
   }
