@@ -91,8 +91,9 @@ export async function getStreamLink(address: string) {
       return streamLink;  
     }
   }
-  export async function writeSongEntity(address: string) {
+export async function writeSongEntity(address: string) {
   const response = await callApi("links/", { url: address });
+  console.warn(JSON.stringify(response));
   const songEntity: SongEntity_NoLink | undefined = response?.entitiesByUniqueId
     ? Object.values(response.entitiesByUniqueId as Record<string, SongEntity_NoLink>).find(
         (entity: SongEntity_NoLink) => entity.type === "song"
@@ -102,8 +103,9 @@ export async function getStreamLink(address: string) {
     if (songEntity) {
       const finalEntity: SongEntity = {
         ...songEntity,
-        link: response?.LinksByPlatform?.youtubeMusic?.url || ''
+        link: response.linksByPlatform.youtubeMusic?.url || ''
       } as SongEntity;
+      console.warn(response.linksByPlatform.youtubeMusic?.url);
 
       const trackInfoEntity: TrackInfo =  {
         title: finalEntity.title,

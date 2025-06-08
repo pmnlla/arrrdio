@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 var songLink = ref('')
-var ApiCall = ref('')
 import { getAllAssociatedInfo, getOdesliLink, getSongName, getStreamLink, writeSongEntity } from "~/util/odesli"
+import { pushSong } from "~/util/backend"
 
 /// <reference types="../node_modules/.vue-global-types/vue_3.5_0_0_0.d.ts" />
 import type { TrackInfo, CastEntity } from "~/util/castEntity";
@@ -19,8 +19,8 @@ async function call() {
   if (songLink.value == "") throw new Error("Cock");
   const castEntity = await writeSongEntity(songLink.value);
   if (castEntity && castEntity._trackInfo) {
+    pushSong(castEntity)
     showSongToast(castEntity._trackInfo.title, castEntity._trackInfo.artist);
-    console.log(JSON.stringify(castEntity));
   } else {
     console.log(castEntity?._trackInfo.title);
   }

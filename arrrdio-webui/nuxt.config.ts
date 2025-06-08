@@ -16,7 +16,8 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      odesliAddress: 'https://api.song.link/v1-alpha.1'
+      odesliAddress: 'https://api.song.link/v1-alpha.1',
+      backendAddress: 'http://127.0.0.1:8000'
     }
   },
 
