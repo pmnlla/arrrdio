@@ -1,11 +1,10 @@
 # Arrrdio
 The piracy-fueled, open music queue!
 
-[![forthebadge](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNTQuNDg0Mzg2NDQ0MDkxOCIgaGVpZ2h0PSIzNSIgdmlld0JveD0iMCAwIDE1NC40ODQzODY0NDQwOTE4IDM1Ij48cmVjdCB3aWR0aD0iNTkuNzUwMDAzODE0Njk3MjY2IiBoZWlnaHQ9IjM1IiBmaWxsPSIjNGE0YTRhIi8+PHJlY3QgeD0iNTkuNzUwMDAzODE0Njk3MjY2IiB3aWR0aD0iOTQuNzM0MzgyNjI5Mzk0NTMiIGhlaWdodD0iMzUiIGZpbGw9IiMwMDAwMDAiLz48dGV4dCB4PSIyOS44NzUwMDE5MDczNDg2MzMiIHk9IjIxLjUiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtZmFtaWx5PSInUm9ib3RvJywgc2Fucy1zZXJpZiIgZmlsbD0iI0ZGRkZGRiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9IjIiPkhFSURJPC90ZXh0Pjx0ZXh0IHg9IjEwNy4xMTcxOTUxMjkzOTQ1MyIgeT0iMjEuNSIgZm9udC1zaXplPSIxMiIgZm9udC1mYW1pbHk9IidNb250c2VycmF0Jywgc2Fucy1zZXJpZiIgZmlsbD0iI0ZGRkZGRiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9IjkwMCIgbGV0dGVyLXNwYWNpbmc9IjIiPkZBTkNMVUI8L3RleHQ+PC9zdmc+)](https://forthebadge.com)
-[![forthebadge](https://forthebadge.com/images/badges/uses-h9rbs.svg)](https://forthebadge.com)
-[![forthebadge](https://forthebadge.com/images/badges/contains-17-coffee-cups.svg)](https://forthebadge.com)
-[![forthebadge](https://forthebadge.com/images/badges/it-works-why.svg)](https://forthebadge.com)
-[![forthebadge](https://forthebadge.com/images/featured/featured-made-with-crayons.svg)](https://forthebadge.com)
+![forthebadge](https://forthebadge.com/images/badges/uses-h9rbs.svg)
+![forthebadge](https://forthebadge.com/images/badges/contains-17-coffee-cups.svg)
+![forthebadge](https://forthebadge.com/images/badges/it-works-why.svg)
+![forthebadge](https://forthebadge.com/images/featured/featured-made-with-crayons.svg)
 
 ## Objective
 
