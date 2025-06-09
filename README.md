@@ -3,7 +3,6 @@ The piracy-fueled, open music queue!
 
 ![forthebadge](https://forthebadge.com/images/badges/uses-h9rbs.svg)
 ![forthebadge](https://forthebadge.com/images/badges/contains-17-coffee-cups.svg)
-![forthebadge](https://forthebadge.com/images/featured/featured-made-with-crayons.svg)
 
 ## Objective
 
